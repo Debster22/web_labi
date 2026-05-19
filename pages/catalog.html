@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Каталог проєктів з можливістю створення, редагування та видалення">
+    <title>Проєкти | WebStudio</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../index.html">
+                        <i class="fas fa-code"></i>
+                        <span>WebStudio</span>
+                    </a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="main-nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html" class="nav-link"><i class="fas fa-home"></i> Головна</a></li>
+                        <li><a href="about.html" class="nav-link"><i class="fas fa-user"></i> Про мене</a></li>
+                        <li><a href="catalog.html" class="nav-link active"><i class="fas fa-project-diagram"></i> Проєкти</a></li>
+                        <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Контакти</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button id="themeToggle" class="theme-toggle" aria-label="Перемикач теми">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Мої проєкти</h1>
+                <p>Управління проєктами через CRUD операції з REST API</p>
+            </div>
+        </section>
+
+        <!-- Search and Filters -->
+        <section class="filters-section">
+            <div class="container">
+                <div class="filters-wrapper">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Пошук проєктів...">
+                    </div>
+                    <div class="filter-group">
+                        <select id="categoryFilter">
+                            <option value="all">Всі категорії</option>
+                            <option value="web">Веб-розробка</option>
+                            <option value="mobile">Мобільна розробка</option>
+                            <option value="ai">AI рішення</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select id="statusFilter">
+                            <option value="all">Всі статуси</option>
+                            <option value="published">Опубліковано</option>
+                            <option value="draft">Чернетка</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select id="sortSelect">
+                            <option value="id">За ID</option>
+                            <option value="title">За назвою</option>
+                            <option value="price-asc">Ціна (зростання)</option>
+                            <option value="price-desc">Ціна (спадання)</option>
+                        </select>
+                    </div>
+                    <button id="addItemBtn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Додати проєкт
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="loading-state" style="display: none;">
+            <div class="spinner"></div>
+            <p>Завантаження проєктів...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="errorState" class="error-state" style="display: none;">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h3>Помилка завантаження</h3>
+            <p>Не вдалося завантажити проєкти. Спробуйте пізніше.</p>
+            <button id="retryLoadBtn" class="btn btn-outline">Спробувати знову</button>
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state" style="display: none;">
+            <i class="fas fa-folder-open"></i>
+            <h3>Проєкти не знайдено</h3>
+            <p>За вашими критеріями пошуку не знайдено жодного проєкту</p>
+        </div>
+
+        <!-- Catalog Grid -->
+        <section class="catalog-section">
+            <div class="container">
+                <div id="catalogGrid" class="catalog-grid"></div>
+            </div>
+        </section>
+
+        <!-- Pagination -->
+        <div class="pagination-wrapper" id="paginationWrapper" style="display: none;">
+            <div class="container">
+                <div class="pagination" id="pagination"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <i class="fas fa-code"></i>
+                        <span>WebStudio</span>
+                    </div>
+                    <p>Створюємо сучасні веб-рішення, які допомагають бізнесу зростати.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Швидкі посилання</h4>
+                    <ul>
+                        <li><a href="../index.html">Головна</a></li>
+                        <li><a href="about.html">Про мене</a></li>
+                        <li><a href="catalog.html">Проєкти</a></li>
+                        <li><a href="contact.html">Контакти</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Контакти</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@webstudio.com</li>
+                        <li><i class="fas fa-phone"></i> +380 (99) 999-99-99</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Київ, Україна</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> WebStudio | Всі права захищено</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Наверх">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Підтвердження видалення</h3>
+                <button class="modal-close delete-modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Ви впевнені, що хочете видалити проєкт <strong id="deleteItemTitle"></strong>?</p>
+                <p>Цю дію не можна буде скасувати.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline delete-modal-cancel">Скасувати</button>
+                <button class="btn btn-danger delete-modal-confirm">Видалити</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Item Form Modal (Create/Edit) -->
+    <div id="itemFormModal" class="modal modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="itemFormTitle">Додати проєкт</h3>
+                <button class="modal-close form-modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="itemForm">
+                    <input type="hidden" id="itemId">
+                    <div class="form-group">
+                        <label for="itemTitle">Назва проєкту <span class="required">*</span></label>
+                        <input type="text" id="itemTitle" name="title" required minlength="3" maxlength="100">
+                        <div class="error-message" id="titleError"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="itemCategory">Категорія <span class="required">*</span></label>
+                            <select id="itemCategory" name="category" required>
+                                <option value="web">Веб-розробка</option>
+                                <option value="mobile">Мобільна розробка</option>
+                                <option value="ai">AI рішення</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="itemStatus">Статус <span class="required">*</span></label>
+                            <select id="itemStatus" name="status" required>
+                                <option value="published">Опубліковано</option>
+                                <option value="draft">Чернетка</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemPrice">Ціна ($) <span class="required">*</span></label>
+                        <input type="number" id="itemPrice" name="price" required min="0" step="100">
+                        <div class="error-message" id="priceError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemDescription">Опис <span class="required">*</span></label>
+                        <textarea id="itemDescription" name="description" rows="4" required minlength="10" maxlength="500"></textarea>
+                        <div class="char-counter">
+                            <span id="descCharCount">0</span> / 500 символів
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemImage">URL зображення</label>
+                        <input type="url" id="itemImage" name="image" placeholder="https://picsum.photos/id/...">
+                    </div>
+                    <div class="form-group">
+                        <label>Теги (через кому)</label>
+                        <input type="text" id="itemTags" placeholder="react, nodejs, mongodb">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline form-modal-cancel">Скасувати</button>
+                        <button type="submit" class="btn btn-primary" id="itemFormSubmit">Зберегти</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toastNotification" class="toast-notification"></div>
+
+    <script src="../js/api.js" defer></script>
+    <script src="../js/catalog.js" defer></script>
+    <script src="../js/form.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

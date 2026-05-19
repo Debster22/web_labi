@@ -1,0 +1,152 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "title": "E-Commerce Platform",
+      "category": "web",
+      "status": "published",
+      "price": 3200,
+      "description": "Повнофункціональна платформа для інтернет-магазину з адмін-панеллю",
+      "image": "https://picsum.photos/id/20/400/300",
+      "tags": [
+        "react",
+        "nodejs",
+        "mongodb"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Mobile Banking App",
+      "category": "mobile",
+      "status": "published",
+      "price": 4600,
+      "description": "Мобільний додаток для банкінгу з біометричною авторизацією",
+      "image": "https://picsum.photos/id/26/400/300",
+      "tags": [
+        "react-native",
+        "firebase"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "AI Chatbot",
+      "category": "ai",
+      "status": "draft",
+      "price": 2800,
+      "description": "Інтелектуальний чат-бот для підтримки клієнтів на основі AI",
+      "image": "https://picsum.photos/id/1/400/300",
+      "tags": [
+        "python",
+        "tensorflow",
+        "dialogflow"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Corporate Website",
+      "category": "web",
+      "status": "published",
+      "price": 1800,
+      "description": "Сучасний корпоративний сайт для IT-компанії",
+      "image": "https://picsum.photos/id/42/400/300",
+      "tags": [
+        "wordpress",
+        "elementor"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Fitness Tracker",
+      "category": "mobile",
+      "status": "published",
+      "price": 2200,
+      "description": "Додаток для відстеження тренувань та харчування",
+      "image": "https://picsum.photos/id/144/400/300",
+      "tags": [
+        "flutter",
+        "firebase"
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Analytics Dashboard",
+      "category": "web",
+      "status": "published",
+      "price": 3500,
+      "description": "Дашборд для аналітики бізнесу з реального часу",
+      "image": "https://picsum.photos/id/0/400/300",
+      "tags": [
+        "vue",
+        "d3js",
+        "express"
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Face Recognition System",
+      "category": "ai",
+      "status": "draft",
+      "price": 5800,
+      "description": "Система розпізнавання облич для контролю доступу",
+      "image": "https://picsum.photos/id/91/400/300",
+      "tags": [
+        "python",
+        "opencv",
+        "deep-learning"
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Food Delivery App",
+      "category": "mobile",
+      "status": "published",
+      "price": 3900,
+      "description": "Додаток для доставки їжі з геолокацією",
+      "image": "https://picsum.photos/id/108/400/300",
+      "tags": [
+        "swift",
+        "ios",
+        "mapkit"
+      ]
+    },
+    {
+      "id": "9",
+      "title": "CRM System",
+      "category": "web",
+      "status": "published",
+      "price": 4200,
+      "description": "Система управління відносинами з клієнтами",
+      "image": "https://picsum.photos/id/119/400/300",
+      "tags": [
+        "laravel",
+        "react",
+        "mysql"
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Voice Assistant",
+      "category": "ai",
+      "status": "draft",
+      "price": 3100,
+      "description": "Голосовий помічник для розумного будинку",
+      "image": "https://picsum.photos/id/169/400/300",
+      "tags": [
+        "python",
+        "speech-recognition",
+        "raspberry-pi"
+      ]
+    },
+    {
+      "title": "ТЕСТ",
+      "category": "web",
+      "status": "published",
+      "price": 100,
+      "description": "ТЕСТТЕСТТЕСТ",
+      "image": "https://picsum.photos/id/14/400/300",
+      "tags": [],
+      "id": "xqiP8rM8LfM"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

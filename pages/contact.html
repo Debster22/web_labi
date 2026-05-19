@@ -1,57 +1,216 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <link rel="stylesheet" href="../styles/style.css">
-  <link rel="stylesheet" href="../styles/responsive.css">
-  <meta charset="UTF-8">
-  <title>Контакти</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Зв'яжіться зі мною для обговорення вашого проєкту">
+    <title>Контакти | WebStudio</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="../index.html">Головна</a>
-      <a href="about.html">Про мене</a>
-      <a href="contact.html">Контакти</a>
-    </nav>
-  </header>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../index.html">
+                        <i class="fas fa-code"></i>
+                        <span>WebStudio</span>
+                    </a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="main-nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html" class="nav-link"><i class="fas fa-home"></i> Головна</a></li>
+                        <li><a href="about.html" class="nav-link"><i class="fas fa-user"></i> Про мене</a></li>
+                        <li><a href="catalog.html" class="nav-link"><i class="fas fa-project-diagram"></i> Проєкти</a></li>
+                        <li><a href="contact.html" class="nav-link active"><i class="fas fa-envelope"></i> Контакти</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button id="themeToggle" class="theme-toggle" aria-label="Перемикач теми">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
 
-  <main>
-    <h1>Контакти</h1>
-    <form action="./submit.html" method="get">
-      <p>
-        <label for="name">Ім’я:</label>
-        <input id="name" name="name" type="text" required minlength="2">
-      </p>
-      <p>
-        <label for="email">Email:</label>
-        <input id="email" name="email" type="email" required>
-      </p>
-      <p>
-        <label for="phone">Телефон:</label>
-        <input id="phone" name="phone" type="tel">
-      </p>
-      <p>
-        <label for="topic">Тема:</label>
-        <select id="topic" name="topic">
-          <option value="study">Навчання</option>
-          <option value="work">Співпраця</option>
-          <option value="other">Інше</option>
-        </select>
-      </p>
-      <fieldset>
-        <legend>Зручний спосіб зв’язку</legend>
-        <label><input type="radio" name="contactWay" value="email" checked> Email</label>
-        <label><input type="radio" name="contactWay" value="phone"> Телефон</label>
-      </fieldset>
-      <p>
-        <label for="message">Повідомлення:</label><br>
-        <textarea id="message" name="message" rows="5"></textarea>
-      </p>
-      <p>
-        <label><input type="checkbox" name="agree" required> Погоджуюсь з правилами</label>
-      </p>
-      <button type="submit">Надіслати</button>
-    </form>
-  </main>
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Зв'язатись зі мною</h1>
+                <p>Заповніть форму та я відповім найближчим часом</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <div class="contact-info-card">
+                            <h3>Контактна інформація</h3>
+                            <ul class="contact-details">
+                                <li><i class="fas fa-phone-alt"></i> <div><strong>Телефон</strong><span>+380 (99) 999-99-99</span></div></li>
+                                <li><i class="fas fa-envelope"></i> <div><strong>Email</strong><span>info@webstudio.com</span></div></li>
+                                <li><i class="fas fa-map-marker-alt"></i> <div><strong>Адреса</strong><span>м. Київ, вул. Хрещатик, 1</span></div></li>
+                            </ul>
+                            <div class="contact-social">
+                                <h4>Соціальні мережі</h4>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-github"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-telegram"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-wrapper">
+                        <div class="form-card">
+                            <h3>Напишіть мені</h3>
+                            <form id="contactForm" class="contact-form">
+                                <div class="form-group">
+                                    <label for="name">Ваше ім'я <span class="required">*</span></label>
+                                    <input type="text" id="name" name="name" required minlength="2" maxlength="50" placeholder="Введіть ваше ім'я">
+                                    <div class="error-message" id="nameError"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" required placeholder="example@mail.com">
+                                    <div class="error-message" id="emailError"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone">Телефон</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="+380 99 999 99 99">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="topic">Тема звернення <span class="required">*</span></label>
+                                    <select id="topic" name="topic" required>
+                                        <option value="">Оберіть тему</option>
+                                        <option value="development">Розробка веб-сайту</option>
+                                        <option value="mobile">Мобільний додаток</option>
+                                        <option value="ai">AI рішення</option>
+                                        <option value="consultation">Консультація</option>
+                                        <option value="other">Інше</option>
+                                    </select>
+                                    <div class="error-message" id="topicError"></div>
+                                </div>
+                                
+                                <fieldset class="form-fieldset">
+                                    <legend>Зручний спосіб зв'язку</legend>
+                                    <label class="radio-label">
+                                        <input type="radio" name="contactWay" value="email" checked> Email
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="contactWay" value="phone"> Телефон
+                                    </label>
+                                </fieldset>
+                                
+                                <div class="form-group">
+                                    <label for="message">Повідомлення <span class="required">*</span></label>
+                                    <textarea id="message" name="message" rows="5" required placeholder="Опишіть ваш проєкт..."></textarea>
+                                    <div class="char-counter">
+                                        <span id="charCount">0</span> / 500 символів
+                                    </div>
+                                    <div class="error-message" id="messageError"></div>
+                                </div>
+                                
+                                <div class="form-group checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agree" required> Я погоджуюсь з умовами обробки персональних даних <span class="required">*</span>
+                                    </label>
+                                    <div class="error-message" id="agreeError"></div>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-paper-plane"></i> Надіслати повідомлення
+                                    </button>
+                                    <button type="button" class="btn btn-outline" id="clearDraftBtn">
+                                        <i class="fas fa-eraser"></i> Очистити
+                                    </button>
+                                </div>
+                            </form>
+                            <div id="formSuccessMessage" class="form-success-message" style="display: none;">
+                                <i class="fas fa-check-circle"></i>
+                                <h4>Повідомлення надіслано!</h4>
+                                <p>Дякуємо за звернення. Я зв'яжуся з вами найближчим часом.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <i class="fas fa-code"></i>
+                        <span>WebStudio</span>
+                    </div>
+                    <p>Створюємо сучасні веб-рішення, які допомагають бізнесу зростати.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Швидкі посилання</h4>
+                    <ul>
+                        <li><a href="../index.html">Головна</a></li>
+                        <li><a href="about.html">Про мене</a></li>
+                        <li><a href="catalog.html">Проєкти</a></li>
+                        <li><a href="contact.html">Контакти</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Контакти</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@webstudio.com</li>
+                        <li><i class="fas fa-phone"></i> +380 (99) 999-99-99</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Київ, Україна</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> WebStudio | Всі права захищено</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Наверх">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Modal for form preview -->
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Підтвердження даних</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body" id="previewContent"></div>
+            <div class="modal-footer">
+                <button class="btn btn-outline modal-cancel">Скасувати</button>
+                <button class="btn btn-primary modal-confirm">Підтвердити</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js" defer></script>
+    <script src="../js/form.js" defer></script>
 </body>
 </html>

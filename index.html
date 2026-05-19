@@ -1,62 +1,290 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Мій перший HTML-сайт для практичної роботи.">
-  <link rel="stylesheet" href="./styles/style.css">
-  <link rel="stylesheet" href="./styles/responsive.css">
-  <title>Мій перший HTML-сайт</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Сучасне портфоліо веб-розробника з повним циклом CRUD операцій, темною/світлою темою та адаптивним дизайном">
+    <title>WebStudio | Сучасні веб-рішення</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html">Головна</a>
-      <a href="pages/about.html">Про мене</a>
-      <a href="pages/contact.html">Контакти</a>
-    </nav>
-  </header>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <i class="fas fa-code"></i>
+                        <span>WebStudio</span>
+                    </a>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav class="main-nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link" data-page="home"><i class="fas fa-home"></i> Головна</a></li>
+                        <li><a href="pages/about.html" class="nav-link" data-page="about"><i class="fas fa-user"></i> Про мене</a></li>
+                        <li><a href="pages/catalog.html" class="nav-link" data-page="catalog"><i class="fas fa-project-diagram"></i> Проєкти</a></li>
+                        <li><a href="pages/contact.html" class="nav-link" data-page="contact"><i class="fas fa-envelope"></i> Контакти</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <button id="themeToggle" class="theme-toggle" aria-label="Перемикач теми">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
 
-  <main>
-    <h1>Мій перший HTML-сайт</h1>
-    <h2>Вступ</h2>
-    <p>Це приклад базової HTML-сторінки.</p>
-    <p>Я використовую <strong>семантичні теги</strong> та <em>правильну структуру</em>.</p>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <span class="hero-badge">Вітаю! 👋</span>
+                        <h1>Створюємо <span class="gradient-text">сучасні</span> веб-рішення</h1>
+                        <p>Професійна розробка веб-сайтів, мобільних додатків та AI-рішень. Допомагаю бізнесу зростати через технології.</p>
+                        <div class="hero-buttons">
+                            <a href="pages/catalog.html" class="btn btn-primary">Переглянути проєкти</a>
+                            <a href="pages/contact.html" class="btn btn-outline">Зв'язатись зі мною</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="hero-image-wrapper">
+                            <img src="https://picsum.photos/id/0/500/500" alt="Developer workspace" loading="lazy">
+                            <div class="floating-card card-1">
+                                <i class="fas fa-code"></i>
+                                <span>10+ проєктів</span>
+                            </div>
+                            <div class="floating-card card-2">
+                                <i class="fas fa-users"></i>
+                                <span>30+ клієнтів</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <h2>Списки</h2>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ul>
-    <ol>
-      <li>Підготовка</li>
-      <li>Кодування</li>
-      <li>Тестування</li>
-    </ol>
+        <!-- Services Section -->
+        <section class="services">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Що я пропоную</span>
+                    <h2>Мої послуги</h2>
+                    <p>Надаю повний спектр послуг з розробки веб-рішень будь-якої складності</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Веб-розробка</h3>
+                        <p>Створення сучасних адаптивних сайтів та веб-додатків під ключ</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> React / Vue / Angular</li>
+                            <li><i class="fas fa-check"></i> Node.js / PHP / Python</li>
+                            <li><i class="fas fa-check"></i> Бази даних (MySQL, MongoDB)</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Мобільна розробка</h3>
+                        <p>Створення нативних та крос-платформних мобільних додатків</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> React Native / Flutter</li>
+                            <li><i class="fas fa-check"></i> iOS (Swift) / Android (Kotlin)</li>
+                            <li><i class="fas fa-check"></i> Firebase / AWS Amplify</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI рішення</h3>
+                        <p>Впровадження штучного інтелекту у ваш бізнес</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Чат-боти та голосові асистенти</li>
+                            <li><i class="fas fa-check"></i> Системи розпізнавання</li>
+                            <li><i class="fas fa-check"></i> Аналітика даних</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <h2>Зображення</h2>
-    <figure>
-      <img src="assets/img/example.jpg" alt="Приклад зображення" width="300" height="200">
-      <figcaption>Моє перше зображення</figcaption>
-    </figure>
+        <!-- Skills Section with Accordion -->
+        <section class="skills">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Технології</span>
+                    <h2>Мої навички</h2>
+                    <p>Використовую сучасні технології та інструменти</p>
+                </div>
+                <div class="skills-wrapper">
+                    <div class="skills-card">
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span><i class="fas fa-code"></i> Frontend</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="skill-tags">
+                                    <span>HTML5/CSS3</span>
+                                    <span>JavaScript/TypeScript</span>
+                                    <span>React.js</span>
+                                    <span>Vue.js</span>
+                                    <span>Tailwind CSS</span>
+                                    <span>Bootstrap</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span><i class="fas fa-server"></i> Backend</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="skill-tags">
+                                    <span>Node.js</span>
+                                    <span>Express.js</span>
+                                    <span>Python/Django</span>
+                                    <span>PHP/Laravel</span>
+                                    <span>REST API</span>
+                                    <span>GraphQL</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span><i class="fas fa-database"></i> Database</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="skill-tags">
+                                    <span>MySQL</span>
+                                    <span>PostgreSQL</span>
+                                    <span>MongoDB</span>
+                                    <span>Firebase</span>
+                                    <span>Redis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <h2>Таблиця</h2>
-    <table border="1">
-      <caption>Розклад занять</caption>
-      <thead>
-        <tr><th>День</th><th>Предмет</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Понеділок</td><td>HTML</td></tr>
-        <tr><td>Вівторок</td><td>CSS</td></tr>
-        <tr><td>Середа</td><td>JavaScript</td></tr>
-      </tbody>
-    </table>
-  </main>
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Виконаних проєктів</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Задоволених клієнтів</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Років досвіду</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Підтримка</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <footer>
-    <p>&copy; 2026 Іванченко Роман</p>
-  </footer>
+        <!-- Skills Table -->
+        <section class="skills-table-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Детальна таблиця навичок</h2>
+                    <p>Рівень володіння технологіями</p>
+                </div>
+                <div class="table-wrapper">
+                    <table class="skills-table">
+                        <caption>Таблиця професійних навичок</caption>
+                        <thead>
+                            <tr>
+                                <th>Технологія</th>
+                                <th>Категорія</th>
+                                <th>Рівень</th>
+                                <th>Досвід (роки)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>HTML5/CSS3</td><td>Frontend</td><td><div class="skill-level"><div class="skill-level-fill" style="width: 95%"></div></div></td><td>5</td></tr>
+                            <tr><td>JavaScript/TypeScript</td><td>Frontend</td><td><div class="skill-level"><div class="skill-level-fill" style="width: 90%"></div></div></td><td>4</td></tr>
+                            <tr><td>React.js</td><td>Frontend</td><td><div class="skill-level"><div class="skill-level-fill" style="width: 85%"></div></div></td><td>3</td></tr>
+                            <tr><td>Node.js</td><td>Backend</td><td><div class="skill-level"><div class="skill-level-fill" style="width: 80%"></div></div></td><td>3</td></tr>
+                            <tr><td>Python</td><td>Backend</td><td><div class="skill-level"><div class="skill-level-fill" style="width: 75%"></div></div></td><td>2</td></tr>
+                            <tr><td>MongoDB</td><td>Database</td><td><div class="skill-level"><div class="skill-level-fill" style="width: 70%"></div></div></td><td>2</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <i class="fas fa-code"></i>
+                        <span>WebStudio</span>
+                    </div>
+                    <p>Створюємо сучасні веб-рішення, які допомагають бізнесу зростати.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Швидкі посилання</h4>
+                    <ul>
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="pages/about.html">Про мене</a></li>
+                        <li><a href="pages/catalog.html">Проєкти</a></li>
+                        <li><a href="pages/contact.html">Контакти</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Контакти</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@webstudio.com</li>
+                        <li><i class="fas fa-phone"></i> +380 (99) 999-99-99</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Київ, Україна</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> WebStudio | Всі права захищено</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Наверх">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="./js/main.js" defer></script>
 </body>
 </html>

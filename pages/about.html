@@ -1,38 +1,205 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <link rel="stylesheet" href="../styles/style.css">
-  <link rel="stylesheet" href="../styles/responsive.css">
-  <meta charset="UTF-8">
-  <title>Про мене</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Інформація про веб-розробника, досвід та навички">
+    <title>Про мене | WebStudio</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="../index.html">Головна</a>
-      <a href="about.html">Про мене</a>
-      <a href="contact.html">Контакти</a>
-    </nav>
-  </header>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../index.html">
+                        <i class="fas fa-code"></i>
+                        <span>WebStudio</span>
+                    </a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="main-nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html" class="nav-link"><i class="fas fa-home"></i> Головна</a></li>
+                        <li><a href="about.html" class="nav-link active"><i class="fas fa-user"></i> Про мене</a></li>
+                        <li><a href="catalog.html" class="nav-link"><i class="fas fa-project-diagram"></i> Проєкти</a></li>
+                        <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Контакти</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button id="themeToggle" class="theme-toggle" aria-label="Перемикач теми">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
 
-  <main>
-    <h1>Про мене</h1>
-    <p>Це сторінка з медіа‑контентом.</p>
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Про мене</h1>
+                <p>Дізнайтесь більше про мій професійний шлях</p>
+            </div>
+        </section>
 
-    <h2>Моє відео</h2>
-    <video controls width="480">
-      <source src="../assets/media/demo.mp4" type="video/mp4">
-      <source src="../assets/media/demo.webm" type="video/webm">
-      <p>Ваш браузер не підтримує відео. <a href="../assets/media/demo.mp4">Завантажити</a>.</p>
-    </video>
+        <!-- About Content -->
+        <section class="about-content">
+            <div class="container">
+                <div class="about-wrapper">
+                    <div class="about-image">
+                        <div class="about-image-wrapper">
+                            <img src="https://picsum.photos/id/100/600/600" alt="Profile" loading="lazy">
+                            <div class="experience-badge">
+                                <span>5+</span>
+                                <p>років<br>досвіду</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <h2>Хто я та чим займаюся</h2>
+                        <p>Я — веб-розробник з 5-річним досвідом створення сучасних веб-рішень. Спеціалізуюся на розробці повноцінних веб-додатків, мобільних застосунків та AI-систем.</p>
+                        <p>Моя місія — допомагати бізнесу зростати через впровадження сучасних технологій. Я створюю не просто сайти, а повноцінні інструменти для розвитку бізнесу.</p>
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-code"></i>
+                                <div>
+                                    <h4>Чистий код</h4>
+                                    <p>Пишу чистий, документований та підтримуваний код</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <div>
+                                    <h4>Адаптивний дизайн</h4>
+                                    <p>Сайти коректно відображаються на всіх пристроях</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <div>
+                                    <h4>Висока продуктивність</h4>
+                                    <p>Оптимізація швидкості завантаження та SEO</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-headset"></i>
+                                <div>
+                                    <h4>Цілодобова підтримка</h4>
+                                    <p>Швидка відповідь та вирішення проблем</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <h2>Мій аудіотрек</h2>
-    <audio controls>
-      <source src="../assets/media/demo.mp3" type="audio/mpeg">
-      <source src="../assets/media/demo.ogg" type="audio/ogg">
-      <p>Ваш браузер не підтримує аудіо. <a href="../assets/media/demo.mp3">Завантажити</a>.</p>
-    </audio>
-  </main>
+        <!-- Media Section with Flexbox -->
+        <section class="media-showcase">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Медіа</span>
+                    <h2>Мої роботи в медіа</h2>
+                    <p>Перегляньте відео-презентації проєктів та аудіо-відгуки</p>
+                </div>
+                <div class="media-grid">
+                    <div class="media-card">
+                        <h3><i class="fas fa-video"></i> Відео-презентація</h3>
+                        <video controls poster="https://picsum.photos/id/20/640/360">
+                            <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                            <source src="https://sample-videos.com/video123/webm/720/big_buck_bunny_720p_1mb.webm" type="video/webm">
+                            <p>Ваш браузер не підтримує HTML-відео. <a href="#">Завантажити відео</a></p>
+                        </video>
+                        <p class="media-caption">Огляд успішного проєкту інтернет-магазину</p>
+                    </div>
+                    <div class="media-card">
+                        <h3><i class="fas fa-music"></i> Аудіо-відгук клієнта</h3>
+                        <audio controls>
+                            <source src="https://sample-videos.com/audio/mp3/crowd-cheering.mp3" type="audio/mpeg">
+                            <source src="https://sample-videos.com/audio/ogg/crowd-cheering.ogg" type="audio/ogg">
+                            <p>Ваш браузер не підтримує аудіо. <a href="#">Завантажити аудіо</a></p>
+                        </audio>
+                        <p class="media-caption">Відгук задоволеного клієнта про співпрацю</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section with Flexbox -->
+        <section class="philosophy">
+            <div class="container">
+                <div class="philosophy-wrapper">
+                    <div class="philosophy-item">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Моя мета</h3>
+                        <p>Створити цифрові продукти, які реально допомагають бізнесу зростати та досягати нових вершин</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <i class="fas fa-heart"></i>
+                        <h3>Моя філософія</h3>
+                        <p>Якість, інновації та клієнтоорієнтованість — основні принципи моєї роботи</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Моє бачення</h3>
+                        <p>Робити технології доступними та зрозумілими для кожного бізнесу</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <i class="fas fa-code"></i>
+                        <span>WebStudio</span>
+                    </div>
+                    <p>Створюємо сучасні веб-рішення, які допомагають бізнесу зростати.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Швидкі посилання</h4>
+                    <ul>
+                        <li><a href="../index.html">Головна</a></li>
+                        <li><a href="about.html">Про мене</a></li>
+                        <li><a href="catalog.html">Проєкти</a></li>
+                        <li><a href="contact.html">Контакти</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Контакти</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@webstudio.com</li>
+                        <li><i class="fas fa-phone"></i> +380 (99) 999-99-99</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Київ, Україна</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> WebStudio | Всі права захищено</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Наверх">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="../js/main.js" defer></script>
 </body>
 </html>
-
